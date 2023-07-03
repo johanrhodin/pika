@@ -40,6 +40,10 @@ Options that are available as query string values:
 
 - backpressure_detection: Pass in a value of *t* to enable backpressure detection, it is disabled by default.
 - channel_max: Alter the default channel maximum by passing in a 32-bit integer value here.
+- client_properties: Dictiory of client properties used to override the fields in the default client poperties. ::
+
+    amqps://www-data:rabbit_pwd@rabbit1/vhostname?client_properties=%7B%27connection_name%27%3A+%27My+Unique+Connection+Name%27%7D
+
 - connection_attempts: Alter the default of 1 connection attempt by passing in an integer value here.
 - frame_max: Alter the default frame maximum size value by passing in a long integer value [#f1]_.
 - heartbeat: Pass a value greater than zero to enable heartbeats between the server and your application. The integer value you pass here will be the number of seconds between heartbeats.
@@ -52,6 +56,7 @@ Options that are available as query string values:
    - certfile
    - keyfile
    - ssl_version
+
 
 For an information on what the ssl_options can be set to reference the `official Python documentation <http://docs.python.org/3/library/ssl.html>`_. Here is an example of setting the client certificate and key::
 
